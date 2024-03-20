@@ -1,0 +1,24 @@
+<div>
+  <ul class="container-fluid">
+    <li
+      *ngFor="let n of listaNazioni; let i = index"
+      [ngClass]="{ 'd-flex flex-row-reverse': i % 2 == 0 }"
+      class="row bg-light d-flex align-items-center gap-200px justify-content-around li-container p-3 flex-row-reverse"
+    >
+      <img
+        [routerLink]="['/dettaglio', i]"
+        src="{{ n.flag }}"
+        alt="flag"
+        class="image col-2"
+      />
+      <p class="col-5 w-75">
+        Nulla cursus hendrerit erat, nec consequat odio pellentesque nec.
+        Pellentesque eget felis sed arcu tempus fringilla. Duis fringilla, purus
+        non semper condimentum, arcu mauris fermentum mi, quis congue mauris
+        sapien a nisl. Quisque sapien velit, tincidunt nec ipsum vel, aliquam
+        condimentum justo. Class aptent taciti sociosqu ad litora torquent per
+        conubia nostra, per inceptos himenaeos.
+      </p>
+    </li>
+  </ul>
+</div>
