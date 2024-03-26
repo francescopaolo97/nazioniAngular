@@ -1,0 +1,36 @@
+<div class="d-body w-100" *ngIf="nazioneSingola">
+  <div class="card">
+    <img
+      src="{{ nazioneSingola[0].flags.png }}"
+      viewBox="0 0 24 24"
+      class="w-100"
+    />
+    <div
+      class="card__content"
+      [ngStyle]="{ background: 'url(nazioneSingola[0].flags.png)' }"
+    >
+      <p class="card__title">{{ nazioneSingola[0].name.common }}</p>
+      <!-- <p class="card__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco.
+      </p> -->
+      <li><strong>Capitale :</strong> {{ nazioneSingola[0].capital[0] }}</li>
+      <li><strong>Regione :</strong> {{ nazioneSingola[0].region }}</li>
+      <li *ngIf="nazioneSingola[0].languages.ell">
+        <strong>English Language :</strong>{{ nazioneSingola[0].languages.ell }}
+      </li>
+      <li *ngIf="nazioneSingola[0].languages.tur">
+        <strong>Turkish Language :</strong>{{ nazioneSingola[0].languages.tur }}
+      </li>
+      <li *ngIf="nazioneSingola[0].languages.eng">
+        <strong>English Language :</strong>{{ nazioneSingola[0].languages.eng }}
+      </li>
+      <li><strong>Popolazione :</strong> {{ nazioneSingola[0].population }}</li>
+      <li><strong>Guida : </strong>{{ nazioneSingola[0].car.side }}</li>
+    </div>
+  </div>
+</div>
+
+<!-- Nel Template -->
+<div id="mapid" style="width: 600px; height: 523px"></div>
